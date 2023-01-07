@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+</head>
+<body>
+    <h1 style="color: red;">Array of OBjects</h1>
+
+    <h2>Q1. let studentRecords = [{name: 'John', id: 123, marks : 98 }, {name: 'Baba', id: 101, marks : 23 }, {name: 'yaga', id: 200, marks : 45 }, {name: 'Wick', id: 115, marks : 75 } ]; "We are interested in retrieving only the students' names; all the names should be in caps.</h2>
+    <pre>
+        let res=[];
+        for(let i=0;i< studentRecords.length;i++){
+          let obj=studentRecords[i];
+          res.push(obj.name.toUpperCase());
+        }
+        console.log(res);
+    </pre>
+    
+    <pre>[ 'JOHN', 'BABA', 'YAGA', 'WICK' ]</pre>
+    <h2>Q.2 Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.</h2>
+    <pre>
+        let studentRecords = [
+        {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } 
+        ];
+        let res=[];
+        for(let i=0;i< studentRecords.length;i++){
+            let obj=studentRecords[i];
+            if(obj.marks>50){
+                res.push(obj);
+            }
+        }
+        console.log(res);
+    </pre>
+    <pre>
+        [{ name: 'John', id: 123, marks: 98 },
+        { name: 'Wick', id: 115, marks: 75 } ]    
+    </pre>
+    <h2>Q3. Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</h2>
+    <pre>
+        let studentRecords = [
+        {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } 
+        ];
+        let res=[];
+        for(let i=0;i< studentRecords.length;i++){
+        let obj=studentRecords[i];
+            if(obj.marks>50 && obj.id>120){
+                res.push(obj);
+            }
+        }
+        console.log(res);
+    </pre>
+    <pre>
+      Output:  [ { name: 'John', id: 123, marks: 98 } ]
+    </pre>
+    <h2>Q4. Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</h2>
+    <pre>
+        let studentRecords = [
+        {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } 
+        ];
+        let sum = 0;
+
+        studentRecords.forEach(element => {
+            sum += element.marks;
+        });
+        console.log(sum);
+    </pre>
+    <pre>
+        Output: 241
+    </pre>
+    <h2>Q5.  This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</h2>
+    <pre>
+        let studentRecords = [
+        {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } 
+        ];
+        let res=[];
+        for(let i=0;i< studentRecords.length;i++){
+            let obj=studentRecords[i];
+            if(obj.marks>50){
+                res.push(obj.name);
+            }
+        }
+        console.log(res);
+    </pre>
+    <pre>
+        Output: [ 'John', 'Wick' ]
+    </pre>
+</body>
+</html>
